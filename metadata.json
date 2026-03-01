@@ -1,0 +1,7 @@
+{
+  "name": "Verificador de Billetes Pro",
+  "description": "Escáner inteligente de series de billetes para detectar series falsas o erróneas mediante OCR.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
