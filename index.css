@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0a0a0a] text-white antialiased overflow-hidden;
+    font-family: var(--font-sans);
+  }
+}
+
+.scan-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  mask: linear-gradient(to bottom, black, black) content-box,
+        linear-gradient(to bottom, black, black);
+  mask-composite: exclude;
+}
+
+.scan-corner {
+  @apply absolute w-8 h-8 border-2 border-[#00ff88];
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(0); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(200px); opacity: 0; }
+}
+
+.scan-line {
+  height: 2px;
+  background: linear-gradient(to right, transparent, #00ff88, transparent);
+  animation: scan-line 2s linear infinite;
+}
